@@ -12,10 +12,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Newman and htmlextra reporter
+          name: Install Newman
           command: npm install -g newman
 
       - run:
-          name: Run collection and upload results
+          name: Run collection
           command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" 
           
