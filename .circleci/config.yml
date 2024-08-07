@@ -17,7 +17,7 @@ jobs:
 
       - run:
           name: Run collection and upload results
-          command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" --folder "API status"  -r json --reporter-json-export test-results/result.html
+          command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" --folder "API status"  -r "htmlextra" --reporter-htmlextra-export
           
           #command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" 
           
