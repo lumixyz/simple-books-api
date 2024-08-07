@@ -16,6 +16,10 @@ jobs:
           command: npm install -g newman newman-reporter-postman-cloud
 
       - run:
+          name: Say hello
+          command: "echo $COLLECTION_ID"
+
+      - run:
           name: Run collection and upload results
           command: newman run "https://api.getpostman.com/collections/22533060-bd88e1d6-c114-4e3a-850d-c56520944d9a?apikey=PMAK-66b34b9086a0bd0001dea081-3c04b937fee79d38ef17dac9b3099d718a" -r postman-cloud --reporter-apiKey "PMAK-66b34b9086a0bd0001dea081-3c04b937fee79d38ef17dac9b3099d718a" --reporter-workspaceId "52b320f5-1d09-486a-a82b-ea41bc936362" --reporter-integrationIdentifier "166947-$CIRCLE_WORKFLOW_JOB_ID"
           
