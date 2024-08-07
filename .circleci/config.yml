@@ -12,15 +12,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Newman and postman cloud reporter
+          name: Install Newman and htmlextra reporter
           command: npm install -g newman newman-reporter-htmlextra
 
       - run:
           name: Run collection and upload results
-          command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" --folder "Register API Client" -d test-results/simple-books-data.csv -r cli,htmlextra --reporter-htmlextra-export test-results/result.html
+          command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" --folder "API status"  -r json --reporter-json-export test-results/result.html
           
           #command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" 
           
-      - store_test_results:
-          path: test-results    
-      
