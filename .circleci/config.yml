@@ -13,11 +13,9 @@ jobs:
       - checkout
       - run:
           name: Install Newman and htmlextra reporter
-          command: npm install -g newman newman-reporter-htmlextra
+          command: npm install -g newman
 
       - run:
           name: Run collection and upload results
-          command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" --folder "API status"  -r "htmlextra" --reporter-htmlextra-export
-          
-          #command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" 
+          command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" 
           
