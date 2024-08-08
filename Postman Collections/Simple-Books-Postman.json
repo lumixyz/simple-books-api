@@ -53,7 +53,49 @@
 						"header": [],
 						"url": "{{SBbaseUrl}}/status"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "64b0a523-e469-40b4-8f8e-bc89aa0383d7",
+							"name": "API status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{SBbaseUrl}}/status"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 08:34:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "15"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"f-v/Y1JusChTxrQUzPtNAKycooOTA\""
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"status\": \"OK\"\n}"
+						}
+					]
 				}
 			],
 			"id": "4a453395-782a-4dcd-952a-15dafc45d4ce"
@@ -1693,7 +1735,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fe4cba8d-c11d-4912-83b7-93731f346a85",
+				"id": "0e5365f8-e921-4324-8f58-c8ec22aea285",
 				"type": "text/javascript",
 				"exec": [
 					"",
@@ -1704,7 +1746,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "aa8bd420-8693-45a6-9005-79c7afdd12d4",
+				"id": "d5f28e1f-7ae8-4de2-aa62-0af8b357e7d4",
 				"type": "text/javascript",
 				"exec": [
 					""
