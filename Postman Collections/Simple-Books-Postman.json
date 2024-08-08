@@ -1684,7 +1684,164 @@
 		},
 		{
 			"name": "Book Delivery (mock)",
-			"item": [],
+			"item": [
+				{
+					"name": "Get a book order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a442d8d5-23fa-4464-89e7-161d9f8a9473",
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status is OK\", () => {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is an object\", () => {\r",
+									"    pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response property check\", () => {\r",
+									"    \r",
+									"    pm.expect(response).to.have.property('id');\r",
+									"    pm.expect(response).to.have.property('bookId');\r",
+									"    pm.expect(response).to.have.property('customerName');\r",
+									"    pm.expect(response).to.have.property('createdBy');\r",
+									"    pm.expect(response).to.have.property('quantity');\r",
+									"    pm.expect(response).to.have.property('timestamp');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response value type check\", () => {\r",
+									"    \r",
+									"    pm.expect(response.id).to.be.a('string');\r",
+									"    pm.expect(response.bookId).to.be.a('number');\r",
+									"    pm.expect(response.customerName).to.be.a('string');\r",
+									"    pm.expect(response.createdBy).to.be.a('string');\r",
+									"    pm.expect(response.quantity).to.be.a('number');\r",
+									"    pm.expect(response.timestamp).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"//postman.setNextRequest(\"Get all book orders\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f28e6a41-26ea-4784-a060-f27450fcc336",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SBbaseUrl}}/orders/:orderId",
+							"host": [
+								"{{SBbaseUrl}}"
+							],
+							"path": [
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"id": "354df385-f068-48af-965f-100c101846b2",
+									"key": "orderId",
+									"value": "{{orderId}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "49a57819-6db5-4768-a0d0-f909ae49358c",
+							"name": "Get a book order Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SBbaseUrl}}/orders/:orderId",
+									"host": [
+										"{{SBbaseUrl}}"
+									],
+									"path": [
+										"orders",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "{{orderId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 09:15:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"bc-4cjjfQyxyVVRiRCDA3O2brhDX4k\""
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": \"OEn4vlU1mUend0tUIkXlC\",\n    \"bookId\": 1,\n    \"customerName\": \"Thelma Haag\",\n    \"createdBy\": \"e99eb49f8aa8d17caa7d48f7f74ed9e5a0de5f69c119dc1295c593aaf4b40706\",\n    \"quantity\": 1,\n    \"timestamp\": 1723102912980\n}"
+						}
+					]
+				}
+			],
 			"id": "f0a76b0f-d3aa-4555-8f34-d2d42c553553"
 		}
 	],
