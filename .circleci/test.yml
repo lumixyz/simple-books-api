@@ -3,7 +3,10 @@ version: 2.1
 workflows:
   check-postman-test-commits-workflow:
     jobs: 
-      - test-branch-collection
+      - test-branch-collection:
+          filters:
+            branches:
+              only: test
 
 jobs:
   test-branch-collection:
