@@ -1840,6 +1840,71 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"bookId\": 1,\n    \"status\": \"Pending\",\n    \"deliveryAddress\" : \"15 Yellow Brick Road, Abuja\",\n    \"deliveryDate\": \"08-08-2024\",\n    \"quantity\": 1\n}"
+						},
+						{
+							"id": "306b50f8-2dc7-4c83-8796-adb24cfec37a",
+							"name": "Get a book order Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{mockUrl}}/orders/:orderId",
+									"host": [
+										"{{mockUrl}}"
+									],
+									"path": [
+										"orders",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "{{orderId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 09:26:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"bc-4cjjfQyxyVVRiRCDA3O2brhDX4k\""
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": \"OEn4vlU1mUend0tUIkXlC\",\n    \"bookId\": 1,\n    \"customerName\": \"Thelma Haag\",\n    \"createdBy\": \"e99eb49f8aa8d17caa7d48f7f74ed9e5a0de5f69c119dc1295c593aaf4b40706\",\n    \"quantity\": 1,\n    \"timestamp\": 1723102912980\n}"
 						}
 					]
 				}
