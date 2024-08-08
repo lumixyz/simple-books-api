@@ -27,10 +27,11 @@ jobs:
     docker:
       - image: 'cimg/base:stable'
     steps:
-      - event: fail
-      - template: basic_fail_1
-    steps:
-      - event: pass
-      - template: basic_success_1
+      - slack/notify:
+          - event: fail
+          - template: basic_fail_1
+      - slack/notify:
+          - event: pass
+          - template: basic_success_1
           
    
