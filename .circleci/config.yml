@@ -20,7 +20,7 @@ jobs:
           name: Run collection
           command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" --folder "API Status"
 
-   notify:
+  notify:
     docker:
       - image: 'cimg/base:stable'
     steps:
@@ -30,4 +30,3 @@ jobs:
       - slack/notify:
           event: pass
           template: basic_success_1
-          
