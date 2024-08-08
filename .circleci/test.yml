@@ -1,12 +1,12 @@
 version: 2.1
 
 workflows:
-  run-collection-workflow:
+  check-postman-test-commits-workflow:
     jobs: 
-      - newman-test-collection
+      - test-branch-collection
 
 jobs:
-  newman-test-collection:
+  test-branch-collection:
     docker:
       - image: postman/newman:latest
     steps:
