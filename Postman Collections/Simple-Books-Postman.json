@@ -824,14 +824,15 @@
 									"    pm.expect(response.name).to.be.a('string');\r",
 									"    pm.expect(response.author).to.be.a('string');\r",
 									"    pm.expect(response.type).to.be.a('string');\r",
-									"    pm.expect(response.type).to.eql(\"fiction\" || \"non-fiction\");\r",
+									"    pm.expect(response.type).to.be.oneOf([\"fiction\", \"non-fiction\"]);\r",
 									"    pm.expect(response.price).to.be.an('number');\r",
 									"    pm.expect(response['current-stock']).to.be.an('number');\r",
 									"    pm.expect(response.available).to.be.a('boolean');\r",
 									"});\r",
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -843,7 +844,8 @@
 									"\r",
 									"pm.collectionVariables.set('bookId', bookId)"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
