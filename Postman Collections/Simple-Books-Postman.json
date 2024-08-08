@@ -53,49 +53,7 @@
 						"header": [],
 						"url": "{{SBbaseUrl}}/status"
 					},
-					"response": [
-						{
-							"id": "64b0a523-e469-40b4-8f8e-bc89aa0383d7",
-							"name": "API status",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": "{{SBbaseUrl}}/status"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Thu, 08 Aug 2024 08:34:11 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "15"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "x-powered-by",
-									"value": "Express"
-								},
-								{
-									"key": "etag",
-									"value": "W/\"f-v/Y1JusChTxrQUzPtNAKycooOTA\""
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"status\": \"OK\"\n}"
-						}
-					]
+					"response": []
 				}
 			],
 			"id": "4a453395-782a-4dcd-952a-15dafc45d4ce"
@@ -1723,6 +1681,11 @@
 				}
 			],
 			"id": "c7fd5c6f-510c-4d00-81cf-7ae6d25ed566"
+		},
+		{
+			"name": "Book Delivery (mock)",
+			"item": [],
+			"id": "f0a76b0f-d3aa-4555-8f34-d2d42c553553"
 		}
 	],
 	"auth": {
