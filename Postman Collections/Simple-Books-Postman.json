@@ -1681,6 +1681,24 @@
 				}
 			],
 			"id": "c7fd5c6f-510c-4d00-81cf-7ae6d25ed566"
+		},
+		{
+			"name": "Book Delivery(mock)",
+			"item": [
+				{
+					"name": "New Request",
+					"id": "9157c274-dee0-42c7-98aa-02390d0ada5f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "561c9f58-3036-4ea4-a632-68d33ce20e06"
 		}
 	],
 	"auth": {
@@ -1693,7 +1711,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8c3c0406-99ad-405a-8240-ff99e6dd949e",
+				"id": "ce8bf685-4bdf-4a5b-976f-15e3e054ff69",
 				"type": "text/javascript",
 				"exec": [
 					"",
@@ -1704,7 +1722,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "cd16440c-afac-40a6-b33f-311443c96261",
+				"id": "ee23fc29-dbd4-45a4-a79e-b8438e9ec1c2",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1775,7 +1793,7 @@
 			"value": ""
 		},
 		{
-			"key": "collectionId",
+			"key": "mockurl",
 			"value": "",
 			"type": "string"
 		}
