@@ -6,7 +6,10 @@ orbs:
 workflows:
   run-collection-workflow:
     jobs: 
-      - newman-test-collection   
+      - newman-test-collection:
+         filters:
+          branches:
+            only: main
       - notify:
           context: slack-secrets
 
