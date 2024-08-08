@@ -1745,7 +1745,7 @@
 							}
 						}
 					],
-					"id": "f0c1de31-b699-4d07-b73b-343edf8d32cb",
+					"id": "2cc88b5c-99b5-4993-9eed-bde9c99849d0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1778,80 +1778,14 @@
 							],
 							"variable": [
 								{
-									"id": "2ebaca36-ed29-42f2-8a28-727ac34044a2",
+									"id": "8072a0a0-5df9-4c33-8149-de2a65e13d11",
 									"key": "orderId",
 									"value": "{{orderId}}"
 								}
 							]
 						}
 					},
-					"response": [
-						{
-							"id": "85a1ef9a-11a4-475f-8090-5cb215e8f941",
-							"name": "Get a book order Copy",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{SBbaseUrl}}/orders/:orderId",
-									"host": [
-										"{{SBbaseUrl}}"
-									],
-									"path": [
-										"orders",
-										":orderId"
-									],
-									"variable": [
-										{
-											"key": "orderId",
-											"value": "{{orderId}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Thu, 08 Aug 2024 07:42:02 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "188"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "x-powered-by",
-									"value": "Express"
-								},
-								{
-									"key": "etag",
-									"value": "W/\"bc-4cjjfQyxyVVRiRCDA3O2brhDX4k\""
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\n    \"id\": \"OEn4vlU1mUend0tUIkXlC\",\n    \"bookId\": 1,\n    \"customerName\": \"Thelma Haag\",\n    \"createdBy\": \"e99eb49f8aa8d17caa7d48f7f74ed9e5a0de5f69c119dc1295c593aaf4b40706\",\n    \"quantity\": 1,\n    \"timestamp\": 1723102912980\n}"
-						}
-					]
+					"response": []
 				}
 			],
 			"id": "561c9f58-3036-4ea4-a632-68d33ce20e06"
@@ -1867,7 +1801,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ce8bf685-4bdf-4a5b-976f-15e3e054ff69",
+				"id": "a4936a9c-2ffb-47b1-8e37-118e9265ae3a",
 				"type": "text/javascript",
 				"exec": [
 					"",
@@ -1878,7 +1812,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ee23fc29-dbd4-45a4-a79e-b8438e9ec1c2",
+				"id": "a866db85-5f82-4ed3-99e1-d7b6133633f7",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1949,7 +1883,7 @@
 			"value": ""
 		},
 		{
-			"key": "mockurl",
+			"key": "mockUrl",
 			"value": "",
 			"type": "string"
 		}
