@@ -9,7 +9,8 @@ jobs:
       - run:
           name: Run Newman Tests
           command: |
-            newman run ./Simple-Books-Postman.json --folder "API Status" -r cli,html --reporter-html-export newman/results.html
+            newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" 
+           --folder "API Status" -r cli,html --reporter-html-export newman/results.html
       - run:
           name: Save Test Results
           command: |
