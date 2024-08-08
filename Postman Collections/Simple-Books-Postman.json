@@ -1719,44 +1719,8 @@
 					},
 					"response": [
 						{
-							"id": "e29aa669-195b-40d2-883c-b1a28677b830",
-							"name": "Default",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/orders/delivery/status/pending?orderId={{orderId}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"orders",
-										"delivery",
-										"status",
-										"pending"
-									],
-									"query": [
-										{
-											"key": "orderId",
-											"value": "{{orderId}}"
-										}
-									]
-								}
-							},
-							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": null,
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\"id\" : \"{{orderId}}\", \"status\" : \"pending\"}"
-						},
-						{
 							"id": "fc6a514a-416d-4621-9156-544cdfaf6e04",
-							"name": "orders/delivery/status/pending?orderId={{orderId}} Copy",
+							"name": "Pending Status",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
