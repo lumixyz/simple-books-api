@@ -1,21 +1,60 @@
 version: 2.1
 
-workflows:
-  run-collection-workflow:
-    jobs: 
-      - newman-collection-run
-
 jobs:
-  newman-collection-run:
+  newman-test:
     docker:
-      - image: node:16-alpine
+      - image: postman/newman:latest
     steps:
       - checkout
       - run:
-          name: Install Newman
-          command: npm install -g newman
-
+          name: Run Newman Tests
+          command: |
+            newman run ./Postman Collections/Simple-Books-Postman.json --folder "API Status" -r cli,html --reporter-html-export newman/results.html
       - run:
-          name: Run collection
-          command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" 
+          name: Save Test Results
+          command: |
+            mkdir -p test_results
+            mv newman/results.html test_results/
+      - run:
+          name: Configure Git
+          command: |
+            git config --global user.name "${GITHUB_USERNAME}"
+            git config --global user.email "${GITHUB_USER}@gmail.com"
+      - run:
+          name: Commit and Push Test Results
+          command: |
+            cd test_results
+            git init
+            git add .
+            git commit -m "Add Newman test results [skip ci]"
+            git remote add origin https://github.com/${GITHUB_USERNAME}/${REPONAME}.git
+            git push --force https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_USERNAME}/${REPONAME}.git HEAD:main
+workflows:
+  version: 2
+  test-and-save-results:
+    jobs:
+      - newman-test
+
+
+
+# version: 2.1
+
+# workflows:
+#   run-collection-workflow:
+#     jobs: 
+#       - newman-collection-run
+
+# jobs:
+#   newman-collection-run:
+#     docker:
+#       - image: node:16-alpine
+#     steps:
+#       - checkout
+#       - run:
+#           name: Install Newman
+#           command: npm install -g newman
+
+#       - run:
+#           name: Run collection
+#           command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" 
           
