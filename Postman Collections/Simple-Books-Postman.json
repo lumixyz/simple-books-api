@@ -824,14 +824,15 @@
 									"    pm.expect(response.name).to.be.a('string');\r",
 									"    pm.expect(response.author).to.be.a('string');\r",
 									"    pm.expect(response.type).to.be.a('string');\r",
-									"    pm.expect(response.type).to.eql(\"fiction\" || \"non-fiction\");\r",
+									"    pm.expect(response.type).to.be.oneOf([\"fiction\", \"non-fiction\"]);\r",
 									"    pm.expect(response.price).to.be.an('number');\r",
 									"    pm.expect(response['current-stock']).to.be.an('number');\r",
 									"    pm.expect(response.available).to.be.a('boolean');\r",
 									"});\r",
 									""
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						},
 						{
@@ -843,7 +844,8 @@
 									"\r",
 									"pm.collectionVariables.set('bookId', bookId)"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -1679,6 +1681,235 @@
 				}
 			],
 			"id": "c7fd5c6f-510c-4d00-81cf-7ae6d25ed566"
+		},
+		{
+			"name": "Book Delivery (mock)",
+			"item": [
+				{
+					"name": "Get a book order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a442d8d5-23fa-4464-89e7-161d9f8a9473",
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status is OK\", () => {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is an object\", () => {\r",
+									"    pm.expect(response).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response property check\", () => {\r",
+									"    \r",
+									"    pm.expect(response).to.have.property('id');\r",
+									"    pm.expect(response).to.have.property('bookId');\r",
+									"    pm.expect(response).to.have.property('customerName');\r",
+									"    pm.expect(response).to.have.property('createdBy');\r",
+									"    pm.expect(response).to.have.property('quantity');\r",
+									"    pm.expect(response).to.have.property('timestamp');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response value type check\", () => {\r",
+									"    \r",
+									"    pm.expect(response.id).to.be.a('string');\r",
+									"    pm.expect(response.bookId).to.be.a('number');\r",
+									"    pm.expect(response.customerName).to.be.a('string');\r",
+									"    pm.expect(response.createdBy).to.be.a('string');\r",
+									"    pm.expect(response.quantity).to.be.a('number');\r",
+									"    pm.expect(response.timestamp).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"//postman.setNextRequest(\"Get all book orders\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f28e6a41-26ea-4784-a060-f27450fcc336",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SBbaseUrl}}/orders/:orderId",
+							"host": [
+								"{{SBbaseUrl}}"
+							],
+							"path": [
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"id": "354df385-f068-48af-965f-100c101846b2",
+									"key": "orderId",
+									"value": "{{orderId}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "49a57819-6db5-4768-a0d0-f909ae49358c",
+							"name": "Pending Delivery",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{mockUrl}}/orders/:orderId/status/pending",
+									"host": [
+										"{{mockUrl}}"
+									],
+									"path": [
+										"orders",
+										":orderId",
+										"status",
+										"pending"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "{{orderId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 09:15:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"bc-4cjjfQyxyVVRiRCDA3O2brhDX4k\""
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"bookId\": 1,\n    \"status\": \"Pending\",\n    \"deliveryAddress\" : \"15 Yellow Brick Road, Abuja\",\n    \"deliveryDate\": \"08-08-2024\",\n    \"quantity\": 1\n}"
+						},
+						{
+							"id": "306b50f8-2dc7-4c83-8796-adb24cfec37a",
+							"name": "Get a book order Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{mockUrl}}/orders/:orderId",
+									"host": [
+										"{{mockUrl}}"
+									],
+									"path": [
+										"orders",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "{{orderId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 09:26:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"bc-4cjjfQyxyVVRiRCDA3O2brhDX4k\""
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"id\": \"OEn4vlU1mUend0tUIkXlC\",\n    \"bookId\": 1,\n    \"customerName\": \"Thelma Haag\",\n    \"createdBy\": \"e99eb49f8aa8d17caa7d48f7f74ed9e5a0de5f69c119dc1295c593aaf4b40706\",\n    \"quantity\": 1,\n    \"timestamp\": 1723102912980\n}"
+						}
+					]
+				}
+			],
+			"id": "f0a76b0f-d3aa-4555-8f34-d2d42c553553"
 		}
 	],
 	"auth": {
@@ -1691,7 +1922,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8c3c0406-99ad-405a-8240-ff99e6dd949e",
+				"id": "0e5365f8-e921-4324-8f58-c8ec22aea285",
 				"type": "text/javascript",
 				"exec": [
 					"",
@@ -1702,7 +1933,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "cd16440c-afac-40a6-b33f-311443c96261",
+				"id": "d5f28e1f-7ae8-4de2-aa62-0af8b357e7d4",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1773,7 +2004,7 @@
 			"value": ""
 		},
 		{
-			"key": "collectionId",
+			"key": "mockUrl",
 			"value": "",
 			"type": "string"
 		}

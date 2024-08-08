@@ -1,0 +1,17 @@
+version: 2.1
+
+workflows:
+  check-postman-test-commits-workflow:
+    jobs: 
+      - test-branch-collection
+
+jobs:
+  test-branch-collection:
+    docker:
+      - image: postman/newman:latest
+    steps:
+      - checkout
+      - run:
+          name: Run collection
+          command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" --folder "API Status"
+          
