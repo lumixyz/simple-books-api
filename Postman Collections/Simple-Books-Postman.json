@@ -1684,7 +1684,156 @@
 		},
 		{
 			"name": "Book Delivery(mock)",
-			"item": [],
+			"item": [
+				{
+					"name": "Pending Delivery",
+					"id": "721a3745-5954-4b39-ba66-2c2c9aebb4fc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{mockUrl}}/orders/delivery/status/pending/{{orderId}}"
+					},
+					"response": [
+						{
+							"id": "f10a51a1-48b1-426a-9013-f47cca5a7416",
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{url}}/orders/delivery/status/pending/{{orderId}}"
+							},
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": "status : pending"
+						}
+					]
+				},
+				{
+					"name": "orders/delivery/status/cancelled/{{orderId}} Copy",
+					"id": "554be605-2130-45e5-9c1a-c5404f684fef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{url}}/orders/delivery/status/cancelled/{{orderId}}"
+					},
+					"response": [
+						{
+							"id": "cfca7789-e627-4186-a4a6-78d6b23a1f46",
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{url}}/orders/delivery/status/cancelled/{{orderId}}"
+							},
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": "status : cancelled"
+						}
+					]
+				},
+				{
+					"name": "orders/delivery/status/pickup/{{orderId}} Copy",
+					"id": "4366d2f8-5eae-40d4-8cff-144f0191855b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{url}}/orders/delivery/status/pickup/{{orderId}}"
+					},
+					"response": [
+						{
+							"id": "f9689a0b-4157-4b7b-8542-72d1f916b4d0",
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{url}}/orders/delivery/status/pickup/{{orderId}}"
+							},
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": "status : pick-up"
+						}
+					]
+				},
+				{
+					"name": "orders/delivery/status/delivered/{{orderId}}",
+					"id": "4d487b19-4591-42b5-a619-60a7473b4e43",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{url}}/orders/delivery/status/delivered/{{orderId}}"
+					},
+					"response": [
+						{
+							"id": "481dc7ff-89c7-4df0-8d00-cc006d109051",
+							"name": "Default",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{url}}/orders/delivery/status/delivered/{{orderId}}"
+							},
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": "status : delivered"
+						}
+					]
+				}
+			],
 			"id": "561c9f58-3036-4ea4-a632-68d33ce20e06"
 		}
 	],
@@ -1698,7 +1847,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e1c194fb-02ac-43c9-9aa7-af21e9d895a7",
+				"id": "fe4cba8d-c11d-4912-83b7-93731f346a85",
 				"type": "text/javascript",
 				"exec": [
 					"",
@@ -1709,7 +1858,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "59f0b9d9-d2b3-426a-ab68-557c9906767a",
+				"id": "aa8bd420-8693-45a6-9005-79c7afdd12d4",
 				"type": "text/javascript",
 				"exec": [
 					""
