@@ -7,8 +7,6 @@ workflows:
   run-collection-workflow:
     jobs: 
       - newman-test-collection   
-  send-notification:
-    jobs:
       - notify:
           context: slack-secrets
 
