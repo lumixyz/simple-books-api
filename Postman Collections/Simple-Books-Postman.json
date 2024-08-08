@@ -1735,7 +1735,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"url": "{{url}}/orders/delivery/status/cancelled/{{orderId}}"
+						"url": "{{mockUrl}}/orders/delivery/status/cancelled/{{orderId}}"
 					},
 					"response": [
 						{
