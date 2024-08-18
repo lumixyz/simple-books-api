@@ -6,4 +6,3 @@ The project demonstrates the following:
 - continuous integration
 - API Mocking
 - Schema validation
-- CI Slack integration for build notifications
