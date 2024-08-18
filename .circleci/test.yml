@@ -17,5 +17,5 @@ jobs:
       - checkout
       - run:
           name: Run collection
-          command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" --folder "API Status"
+          command: newman run "../postmanCollections/Simple-Books-Postman.json" --folder "API Status"
           
