@@ -17,5 +17,5 @@ jobs:
       - checkout
       - run:
           name: Run collection
-          command: newman run "Simple-Books-Postman.json" --folder "API Status"
+          command: newman run "postmanCollections/Simple-Books-Postman.json" --folder "API Status"
           
