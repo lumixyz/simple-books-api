@@ -143,16 +143,7 @@
 									"var customerEmail = pm.variables.replaceIn(\"{{$randomEmail}}\");\r",
 									"\r",
 									"pm.collectionVariables.set('customerName', customerName);\r",
-									"pm.collectionVariables.set('customerEmail', customerEmail);\r",
-									"\r",
-									"//Code for checking validity of token\r",
-									"// console.log(pm.response.headers.get('Date'));\r",
-									"// eval(pm.collectionVariables.get(\"setTokenExpDate\"));\r",
-									"// let temp = setTokenExpDate(pm.response.headers.get('Date'));\r",
-									"// console.log(temp);\r",
-									"// eval(pm.collectionVariables.get(\"isTokenExpired\"));\r",
-									"// let temp2 = isTokenExpired();\r",
-									"// console.log(temp2);"
+									"pm.collectionVariables.set('customerEmail', customerEmail);"
 								],
 								"type": "text/javascript",
 								"packages": {}
