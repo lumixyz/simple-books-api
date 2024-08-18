@@ -778,6 +778,7 @@
 									"        pm.expect(response.available).to.be.a(\"boolean\");\r",
 									"});\r",
 									"\r",
+									"pm.execution.setNextRequest(\"Order Available Book\");\r",
 									""
 								],
 								"type": "text/javascript",
@@ -1286,7 +1287,9 @@
 									"pm.test(\"Response value type check\", () => {\r",
 									"    pm.expect(response.id && response.customerName && response.createdBy).to.be.a('string');\r",
 									"    pm.expect(response.bookId && response.quantity && response.timestamp).to.be.a('number');\r",
-									"});"
+									"});\r",
+									"\r",
+									"pm.execution.setNextRequest(\"Get all book orders\");"
 								],
 								"type": "text/javascript",
 								"packages": {}
