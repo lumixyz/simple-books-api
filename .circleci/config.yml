@@ -10,8 +10,6 @@ workflows:
          filters:
           branches:
             only: main
-      - notify:
-          context: slack-secrets
 
 jobs:
   newman-test-collection:
@@ -23,15 +21,3 @@ jobs:
           name: Run collection
           command: newman run "https://api.getpostman.com/collections/${COLLECTION_ID}?apikey=${POSTMAN_API_KEY}" --folder "API Status"
 
-  notify:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - slack/notify:
-          event: fail
-          template: basic_fail_1
-          mentions: '@lumiolajide'
-      - slack/notify:
-          event: pass
-          template: basic_success_1
-          mentions: '@lumiolajide'
