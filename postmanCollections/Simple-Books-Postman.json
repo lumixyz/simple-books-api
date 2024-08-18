@@ -1370,7 +1370,9 @@
 									"            pm.expect(order.bookId && order.quantity && order.timestamp).to.be.a('number');\r",
 									"        }\r",
 									"    ) \r",
-									"});"
+									"});\r",
+									"\r",
+									"pm.execution.setNextRequest(\"Update an order\");"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1551,7 +1553,8 @@
 									"            .and.be.eq(\"No order with id \"+pm.collectionVariables.get(\"delOrderId\")+\".\")\r",
 									"    });\r",
 									"});\r",
-									""
+									"\r",
+									"pm.execution.setNextRequest(\"Get all book orders (mock)\");"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1625,7 +1628,7 @@
 			"name": "Book Delivery (mock)",
 			"item": [
 				{
-					"name": "Get all book orders",
+					"name": "Get all book orders (mock)",
 					"event": [
 						{
 							"listen": "test",
@@ -1646,7 +1649,7 @@
 									"    pm.expect(response).to.be.an(\"array\");\r",
 									"});\r",
 									"\r",
-									""
+									"pm.execution.setNextRequest(\"Delivered (mock)\");"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1814,7 +1817,7 @@
 					]
 				},
 				{
-					"name": "Delivered",
+					"name": "Delivered (mock)",
 					"event": [
 						{
 							"listen": "test",
@@ -1895,7 +1898,7 @@
 					"response": []
 				},
 				{
-					"name": "Pending",
+					"name": "Pending (mock)",
 					"event": [
 						{
 							"listen": "test",
@@ -1914,7 +1917,9 @@
 									"\r",
 									"pm.test(\"Response is an array\", () => {\r",
 									"    pm.expect(response).to.be.an(\"array\");\r",
-									"});"
+									"});\r",
+									"\r",
+									"pm.execution.setNextRequest(\"Pending (mock)\");"
 								],
 								"type": "text/javascript",
 								"packages": {}
