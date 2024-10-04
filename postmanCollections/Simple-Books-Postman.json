@@ -1625,7 +1625,7 @@
 			"id": "c7fd5c6f-510c-4d00-81cf-7ae6d25ed566"
 		},
 		{
-			"name": "Book Delivery (mock)",
+			"name": "Book Delivery",
 			"item": [
 				{
 					"name": "Get all book orders (mock)",
@@ -1982,10 +1982,10 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5b0f638e-40bd-4ee8-8003-0358da2832a3",
+				"id": "0e36aa76-6a04-4f64-aed5-8b9afd60960d",
 				"type": "text/javascript",
 				"exec": [
-					"//Schemas",
+					"//Schemas for the tests sub-dir",
 					"pm.globals.set(",
 					"    'statusClientSchema', `",
 					"    function statusClientSchema(prop){",
@@ -2196,7 +2196,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e8b8056d-0ce4-4999-8df0-a6e43861caed",
+				"id": "f5fb45be-2484-4315-b359-5a82ed75508f",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2206,172 +2206,138 @@
 	],
 	"variable": [
 		{
-			"id": "80734c2b-5c5f-4baa-9fc5-ee38a1c9e875",
 			"key": "SBbaseUrl",
 			"value": "https://simple-books-api.glitch.me"
 		},
 		{
-			"id": "a95756c1-01ad-4cb6-99fa-a370092cde14",
 			"key": "accessToken",
 			"value": ""
 		},
 		{
-			"id": "2cfe5c09-c1b4-47ed-8799-25bf7b169dbd",
 			"key": "customerName",
 			"value": ""
 		},
 		{
-			"id": "ce2ce5b6-206e-447e-a276-0064cbe28199",
 			"key": "customerEmail",
 			"value": ""
 		},
 		{
-			"id": "8b1667a7-9371-4f50-bb0c-124d9a5a5b43",
 			"key": "existingName",
 			"value": ""
 		},
 		{
-			"id": "db21dbec-75cc-4863-9d29-48e2f2b002d8",
 			"key": "existingEmail",
 			"value": ""
 		},
 		{
-			"id": "01eaef74-adb5-4187-b1c2-5d294e5bfca8",
 			"key": "bookId",
 			"value": ""
 		},
 		{
-			"id": "1afd538c-583e-4234-8d9a-3ec85fb610a9",
 			"key": "bookLimit",
 			"value": ""
 		},
 		{
-			"id": "05032779-2929-4562-95bb-32a673e21a94",
 			"key": "bookType",
 			"value": ""
 		},
 		{
-			"id": "8fb1df78-fe1c-440e-9b53-3adcb6605150",
 			"key": "avaiBookId",
 			"value": ""
 		},
 		{
-			"id": "830623bf-feea-434f-bab1-49da2c79dbe2",
 			"key": "orderId",
 			"value": ""
 		},
 		{
-			"id": "d0b99408-4586-4781-8493-0fd713e64eaa",
 			"key": "unavaiBookId",
 			"value": ""
 		},
 		{
-			"id": "444d3b09-850d-415d-92aa-853bf4237b25",
 			"key": "nameUpdate",
 			"value": ""
 		},
 		{
-			"id": "0c252efb-693d-46a1-aae5-ac6d7f508baf",
 			"key": "patchOrderId",
 			"value": ""
 		},
 		{
-			"id": "f8291b98-1d39-446a-8a3c-53426f31e72d",
 			"key": "delOrderId",
 			"value": ""
 		},
 		{
-			"id": "05d5408a-c865-48c0-9002-2e44455c9da6",
 			"key": "mockUrl",
 			"value": ""
 		},
 		{
-			"id": "eb1dd992-0bf7-4ad5-8a5a-5cf8b609b98f",
 			"key": "registerApiClient",
 			"value": ""
 		},
 		{
-			"id": "e5218bd4-3ee6-4798-9052-0cd701d3af2f",
 			"key": "registerNewUser",
 			"value": ""
 		},
 		{
-			"id": "fa2496e9-36e1-43d2-9866-f9dbf156299f",
 			"key": "myFunction",
 			"value": ""
 		},
 		{
-			"id": "1de24c44-9797-41c2-807d-2a6f350248ee",
 			"key": "myFunctionCode",
 			"value": ""
 		},
 		{
-			"id": "b176975f-2245-46e1-9c3e-111458ff658c",
 			"key": "registerApiClientReq",
 			"value": ""
 		},
 		{
-			"id": "26486b2f-b6b8-4ef6-9b0f-ccecb30c4662",
 			"key": "regClientSchema",
 			"value": ""
 		},
 		{
-			"id": "1354183f-e9b1-475b-91d1-5f6af17ff088",
 			"key": "status_regClient_Schema",
 			"value": ""
 		},
 		{
-			"id": "27971dfa-a2b6-4e48-aa46-ded881fee6e0",
 			"key": "status_invalidRegClient_Schema",
 			"value": ""
 		},
 		{
-			"id": "4dfb7037-f910-4439-a1ac-95a632591204",
 			"key": "invalidRegClient_Schema",
 			"value": ""
 		},
 		{
-			"id": "6d28906b-f217-4a8c-abfa-7fd94f2d9ee3",
 			"key": "validRegClient_Schema",
 			"value": ""
 		},
 		{
-			"id": "c2fca8da-63c1-4d63-8989-d118b911c186",
 			"key": "statusSchema",
 			"value": ""
 		},
 		{
-			"id": "29d993bd-e038-470a-a49c-9352040d71ab",
 			"key": "validRegClientSchema",
 			"value": ""
 		},
 		{
-			"id": "e86dcdf5-9664-4d18-9365-5148de7c6550",
 			"key": "invalidRegClientSchema",
 			"value": ""
 		},
 		{
-			"id": "3121fee7-bbc0-45f9-81db-1a08911fc394",
 			"key": "placeNewBookOrder",
 			"value": ""
 		},
 		{
-			"id": "5c536308-37de-4b49-95e4-008e753e8563",
 			"key": "confirmOrder",
 			"value": ""
 		},
 		{
-			"id": "171d582e-398c-4058-bc4d-dd3654125855",
 			"key": "tokenValidityStatus",
 			"value": ""
 		},
 		{
-			"id": "9c1c5aba-0d2c-4de1-9fed-349ff4508f52",
 			"key": "isTokenExpired",
 			"value": ""
 		},
 		{
-			"id": "84259a7c-176e-461d-a802-906e2b871035",
 			"key": "setTokenExpDate",
 			"value": ""
 		}
